@@ -80,8 +80,7 @@
 			</div>
 		</div>
 	</div>
-</div>
-	
+	</div>
 	
 	
 	<!-- Partner Details-->
@@ -175,7 +174,7 @@
 	<script type="text/javascript">
 	
 	$(document).ready(function(){
-	$('.preloader-background').delay(500).fadeOut('slow');
+	$('.preloader-background').delay(500).fadeIn('slow');
 	$.ajax({ 
 			type: 'GET', 
             url: 'https://api.myjson.com/bins/fb00p',
@@ -232,16 +231,14 @@
 												+"  <td style='display:none;'><p>"+JSON.stringify(carray)+"</p></td>"
 											
 											+"	</tr>");
-				
 						}
 				},
 			error: function(error){
 			console.log(JSON.stringfy(error));
 		}
 	});
-	$('.preloader-wrapper')
-		.delay(1000)
-		.fadeOut();
+	$('.preloader-background').delay(500).fadeOut('slow');
+//	$('.preloader-wrapper').delay(1000).fadeOut();
 });
 	</script>
 	<script>
