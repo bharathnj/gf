@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<table class="striped responsive-table">
+        <thead>
+          <tr>
+			  <th>Sl No.</th>
+			  <th>Partner Id</th>
+              <th>Trading Partner</th>
+              <th>Description</th>
+			  <th>Service State</th>
+			  <th>Start Service</th>
+			  <th>Stop Service</th>
+			  <th>Edit Service</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody">
+			<tr>
+				<td>1</td>
+				<td>GFP_1</td>
+				<td>Partner1.jar</td>
+				<td>Partner1 description goes here...</td>
+				<td><img src="images/status_success.png" /> Running</td>
+				<td><a class="waves-effect waves-light btn start-button" disabled>Start</a></td>
+				<td><a class="waves-effect waves-light btn stop-button">Stop</a></td>
+				<td><a class="waves-effect waves-light btn edit-button modal-trigger" href="#edit_modal">Edit</a></td>
+			</tr>
+			
+		</tbody>
+</table>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script type="text/javascript">	
+$(document).ready(function(){
+	$.ajax({ 
+			type: 'GET', 
+            url: 'https://api.myjson.com/bins/1gx58x', 
+			heders: {"Accept": "application/json; odata=verbose"},
+            dataType:'json',
+            success: function(data){
+			$.each(data.partners, function(){
+	
+				for( var i = 0; i < data.partners.length; i++){
+						console.log(data.partners);
+						var o = data.partners[i];
+						
+						var pname = o.partner_name;
+						var id = o.id;
+						var jar_name = o.jar_file_name;
+						var jar_file_loc = o.jar_file_location;
+						var des = o.description;
+						var proxy_service_port = o.proxy_service_port;
+						var tpurl = o.tp_url;
+						var ssr = o.service_state.running;
+						var sss = o.service_state.stopped;
+						if(ssr == 1){
+							state = "Running";
+							image = "status_success";
+							start_button_class = "diabled";
+							stop_button_class ="";
+						}else{
+							state = "Stopped";
+							image = "status_error";
+							start_button_class = "";
+							stop_button_class = "disabled";
+						}
+						
+						for(var j=0; j<o.certificates.length; j++){
+							var c=o.certificates[i];
+							var cer = [];
+							
+							var cid = c.certificate_id;
+							var cname = c.certificate_name;
+							var cloc = c.certificate_location;
+							var uts = c.uploaded_timestamp
+				
+							cer.push(cid,cname,cloc,uts);
+						}
+
+						var date = o.creation_timestamp;
+						var lmts = o.last_modified_timestamp;
+					
+						$("#tbody").append("<tr><td>" + i + "</td> "
+												+"	<td>"+ id +"</td> "
+												+"	<td>"+ jar_name +"</td> "
+												+"	<td>"+ des +"</td> "
+												+"	<td><img src='images/"+image+".png' /> "+state+"</td> "
+												+"	<td><a class='waves-effect waves-light btn start-button "+ start_button_class+" '>Start</a></td> "
+												+"	<td><a class='waves-effect waves-light btn stop-button "+ stop_button_class+"'>Stop</a></td> "
+												+"	<td><a class='waves-effect waves-light btn edit-button modal-trigger' href='#edit_modal'>Edit</a></td> "
+											+"	</tr>");
+				
+				
+				//	$("#demo").append(pname + id + jar_file_loc + des + proxy_service_port + tpurl + ssr + sss + date + lmts);
+					}
+				}
+				)},
+			error: function(error){
+			console.log(JSON.stringfy(error));
+		}
+	});
+});
+	
+</script>
+
+</body>
+</html>

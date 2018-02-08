@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Global Foundries	| Add Partner</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/custom.css" type="text/css" rel="stylesheet" />
+    <style type="text/css">
+       input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+            border-bottom: 1px solid #797776;
+            -webkit-box-shadow: 0 1px 0 0 #797776;
+            box-shadow: 0 1px 0 0 #797776;
+        }
+        input:not([type]):focus:not([readonly]) + label, input[type=text]:not(.browser-default):focus:not([readonly]) + label, input[type=password]:not(.browser-default):focus:not([readonly]) + label, input[type=email]:not(.browser-default):focus:not([readonly]) + label, input[type=url]:not(.browser-default):focus:not([readonly]) + label, input[type=time]:not(.browser-default):focus:not([readonly]) + label, input[type=date]:not(.browser-default):focus:not([readonly]) + label, input[type=datetime]:not(.browser-default):focus:not([readonly]) + label, input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label, input[type=tel]:not(.browser-default):focus:not([readonly]) + label, input[type=number]:not(.browser-default):focus:not([readonly]) + label, input[type=search]:not(.browser-default):focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+            color: #797776;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar Section-->
+   <div class="navbar-fixed">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">
+            <img class="logo" src="images/logo.png" style="width: 270px; margin-left: 51px; margin-top:13px;" />
+            <a href="#" data-activates="slide-out" style="display: list-item;" class="button-collapse"><i class="material-icons">menu</i></a>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li class="active"><a href="index.html">Home</a></li>
+			<li><a href="details.html">Details</a></li>
+			<li><a class="waves-effect waves-light btn modal-trigger" target="_blank" href="addpartner.html">+ Add Partner</a></li>
+            <li><a class="waves-effect waves-light btn edit-button" href="login.html">Logout</a></li>
+        </ul>
+        </div>
+    </nav>
+    </div>
+
+
+    <!-- Side Nav -->
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="images/office.jpg">
+                </div><br>
+                <a href="#!name"><span class="white-text name">User Name</span></a>
+                <a href="#!email"><span class="white-text email">User Name@domain.com</span></a>
+            </div>
+        </li>
+        <li><a class="waves-effect" href="index.html"><i class="material-icons">ac_unit</i>Home</a></li>
+		        <li><a class="waves-effect" href="details.html"><i class="material-icons">details</i>Details</a></li>
+        <li><a class="waves-effect modal-trigger" href="addpartner.html" target="_blank"><i class="material-icons">person_add</i>Add Partner</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">settings</i>Settings</a></li>
+		<li><a class="waves-effect" href="logout.html"><i class="material-icons">close</i>Logout</a></li>
+    </ul>
+
+    <!--Add Partner -->
+	<div class="row">
+    <div class="container col s12 m12 l10">
+		<div class="col s2"></div>	
+			<div class="col s8 card">
+				<h5>Fill the Partner Details</h5><br>
+				<form class = "col s12">
+					<div class = "row">
+					   <div class = "input-field col s4">
+						 <input placeholder="Name to the Partner" id="partnername" type="text" class="active" required />
+						  <label for="partnername">Partner Name</label>
+					   </div>
+					   
+					   <div class="input-field col s4">      
+						  <label for="partnerid">Partner Id</label>
+						  <input id="partnerid" type="text" placeholder="Enter Partner ID" required />          
+					   </div>
+					   <div class = "input-field col s4">
+						  <input placeholder="Enter Proxy Port Number" id="proxyport" type="text">
+						  <label for="proxyport">Proxy Service Port</label>
+					   </div>
+					</div>
+					
+					<div class="row">
+					   <div class="input-field col s8">
+							<input placeholder="Enter TP URL" id="tpurl" type="text" >
+							<label for="tpurl">TP URL</label>
+					   </div>
+					   <div class="input-field col s4">
+							<input placeholder="Enter TP Port Number" id="tpport" type="text">
+							<label for="tpport">TP Port</label>
+					   </div>
+					</div>           
+
+					<div class="row">
+						<div class="input-field col s12">
+							<input placeholder="Description of the partner" id="desc" type="text">
+							<label for="desc">Description</label>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="file-field input-field">
+						  <div class="btn" style="height: 2em; line-height: 2em;">
+							<span>Upload .jar File</span>
+							<input type="file" multiple>
+						  </div>
+						  <div class="file-path-wrapper">
+							<input class="file-path validate" type="text" placeholder="Upload Partner .jar file">
+						  </div>
+						</div>
+					</div>
+					
+					<div class="row right">
+						<button class="btn wave-effect wave-light edit-button" type="reset">Reset</button>
+						<button class="btn waves-effect waves-light edit-button" type="submit" name="action">Submit
+							<i class="material-icons right ">send</i>
+						</button>
+					</div>
+				</form>       
+			</div>
+		<div class="col s2"></div>
+	</div>
+	</div>
+   
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.card-content').click(function(){
+                $('#activeteam').modal('open');
+            })
+        })
+
+    </script>
+  </body>
+</html>

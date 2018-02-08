@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Global Foundries	| Details</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/custom.css" type="text/css" rel="stylesheet" />
+   
+</head>
+<body>
+    <!-- Navigation Bar Section-->
+    <div class="navbar-fixed">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">
+            <img class="logo" src="images/logo.png" style="width: 270px; margin-left: 51px; margin-top:13px;" />
+            <a href="#" data-activates="slide-out" style="display: list-item;" class="button-collapse"><i class="material-icons">menu</i></a>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">Home</a></li>
+			<li  class="active"><a href="details.html">Details</a></li>
+			<li><a class="waves-effect waves-light btn modal-trigger" target="_blank" href="addpartner.html">+ Add Partner</a></li>
+            <li><a class="waves-effect waves-light btn edit-button" href="login.html">Logout</a></li>
+        </ul>
+        </div>
+    </nav>
+    </div>
+
+
+    <!-- Side Nav -->
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="images/office.jpg">
+                </div><br>
+                <a href="#!name"><span class="white-text name">User Name</span></a>
+                <a href="#!email"><span class="white-text email">User Name@domain.com</span></a>
+            </div>
+        </li>
+        <li><a class="waves-effect" href="index.html"><i class="material-icons">ac_unit</i>Home</a></li>
+		<li><a class="waves-effect" href="details.html"><i class="material-icons">details</i>Details</a></li>
+        <li><a class="waves-effect modal-trigger" href="addpartner.html" target="_blank"><i class="material-icons">person_add</i>Add Partner</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">settings</i>Settings</a></li>
+		<li><a class="waves-effect" href="logout.html"><i class="material-icons">close</i>Logout</a></li>
+    </ul>
+	
+	
+	
+	<!-- Partner Details-->
+	<br>
+    <div class="container">
+		 <table class="striped responsive-table">
+        <thead>
+          <tr>
+			  <th>Sl No.</th>
+              <th>Trading Partner Name</th>
+              <th>Proxy Service Port</th>
+			  <th>TP URL</th>
+			  <th>TP Port</th>
+			  <th>Certificates</th>
+			  <th>Upload Certificates</th>
+          </tr>
+        </thead>
+
+        <tbody>
+			<tr>
+				<td>1</td>
+				<td>Partner1</td>
+				<td>8089</td>
+				<td>http://tpurl.com</td>
+				<td>80</td>
+				<td>certificate_name_1 <br> certificate_name_2</td>
+				<td><a class="waves-effect waves-light btn edit-button modal-trigger" href="#uploadcertificate">Upload</a></td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td>Partner2</td>
+				<td>8089</td>
+				<td>http://tpurl.com</td>
+				<td>80</td>
+				<td>certificate_name_1</td>
+				<td><a class="waves-effect waves-light btn edit-button modal-trigger" href="#uploadcertificate">Upload</a></td>
+			</tr>
+			
+			<tr>
+				<td>3</td>
+				<td>Partner3</td>
+				<td>8089</td>
+				<td>http://tpurl.com</td>
+				<td>80</td>
+				<td>certificate_name_1</td>
+				<td><a class="waves-effect waves-light btn edit-button modal-trigger" href="#uploadcertificate">Upload</a></td>
+			</tr>
+        </tbody>
+      </table>
+   
+    </div>
+	
+	 <!-- Modal Structure -->
+	  <div id="uploadcertificate" class="modal">
+		<div class="modal-content">
+		<div class="container">
+		  <h6 class="ucheading">Upload Certificates</h6>
+			<br>
+			<form action="#">
+				<div class="file-field input-field">
+				  <div class="btn" style="height: 2em; line-height: 2em;">
+					<span>File</span>
+					<input type="file" multiple>
+				  </div>
+				  <div class="file-path-wrapper">
+					<input class="file-path validate" type="text" placeholder="Upload one or more files">
+				  </div>
+				</div>
+			</form>
+			
+			<div style="margin-top: 10px;">
+				<div class="chip">
+					Certificate_name_1
+				<i class="close material-icons">close</i>
+				</div>
+				<div class="chip">
+					Certificate_name_2
+				<i class="close material-icons">close</i>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-effect btn-flat">Close</a>
+			<a href="#!" class="modal-action waves-effect btn-flat">Upload</a>
+		</div>
+	  </div>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>

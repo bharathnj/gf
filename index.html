@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Global Foundries | Home</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/custom.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	    <!-- Navigation Bar Section-->
+   <div class="navbar-fixed">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">
+            <img class="logo" src="images/logo.png" style="width: 270px; margin-left: 51px; margin-top:13px;" />
+            <a href="#" data-activates="slide-out" style="display: list-item;" class="button-collapse"><i class="material-icons">menu</i></a>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li class="active"><a href="index.html">Home</a></li>
+			<li><a href="details.html">Details</a></li>
+			<li><a class="waves-effect waves-light btn modal-trigger" target="_blank" href="addpartner.html">+ Add Partner</a></li>
+            <li><a class="waves-effect waves-light btn edit-button" href="login.html">Logout</a></li>
+        </ul>
+        </div>
+    </nav>
+    </div>
+
+
+    <!-- Side Nav -->
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="images/office.jpg">
+                </div><br>
+                <a href="#!name"><span class="white-text name">User Name</span></a>
+                <a href="#!email"><span class="white-text email">User Name@domain.com</span></a>
+            </div>
+        </li>
+        <li><a class="waves-effect" href="index.html"><i class="material-icons">ac_unit</i>Home</a></li>
+		        <li><a class="waves-effect" href="details.html"><i class="material-icons">details</i>Details</a></li>
+        <li><a class="waves-effect modal-trigger" href="addpartner.html" target="_blank"><i class="material-icons">person_add</i>Add Partner</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">settings</i>Settings</a></li>
+		<li><a class="waves-effect" href="logout.html"><i class="material-icons">close</i>Logout</a></li>
+    </ul>
+	
+	
+	<!-- Partner Details-->
+	<br>
+    <div class="container">
+		<table class="striped responsive-table">
+        <thead>
+          <tr>
+			  <th>Sl No.</th>
+			  <th>Partner Id</th>
+              <th>Trading Partner</th>
+              <th>Description</th>
+			  <th>Service State</th>
+			  <th>Start Service</th>
+			  <th>Stop Service</th>
+			  <th>Edit Service</th>
+          </tr>
+        </thead>
+
+        <tbody>
+			<tr>
+				<td>1</td>
+				<td>GFP_1</td>
+				<td>Partner1.jar</td>
+				<td>Partner1 description goes here...</td>
+				<td><img src="images/status_success.png" /> Running</td>
+				<td><a class="waves-effect waves-light btn start-button" disabled>Start</a></td>
+				<td><a class="waves-effect waves-light btn stop-button">Stop</a></td>
+				<td><a class="waves-effect waves-light btn edit-button modal-trigger" href="#edit_modal">Edit</a></td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td>GFP_2</td>
+				<td>Partner2.jar</td>
+				<td>Partner2 description goes here...</td>
+				<td><img src="images/status_success.png" /> Running</td>
+				<td><a class="waves-effect waves-light btn start-button" disabled>Start</a></td>
+				<td><a class="waves-effect waves-light btn stop-button">Stop</a></td>
+				<td><a class="waves-effect waves-light btn edit-button modal-trigger" href="#edit_modal">Edit</a></td>
+			</tr>
+			
+			<tr>
+				<td>3</td>
+				<td>GFP_3</td>
+				<td>Partner3.jar</td>
+				<td>Partner3 description goes here...</td>
+				<td><img src="images/status_error.png" /> Stopped</td>
+				<td><a class="waves-effect waves-light btn start-button">Start</a></td>
+				<td><a class="waves-effect waves-light btn stop-button" disabled>Stop</a></td>
+				<td><a class="waves-effect waves-light btn edit-button modal-trigger" href="#edit_modal">Edit</a></td>
+			</tr>
+        </tbody>
+      </table>
+    </div>
+	
+	 <!--Edit Service Modal Structure -->
+	  <div id="edit_modal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+		  <h6 class="ucheading">Edit Partner</h6><br>
+			<div class="container">
+				<div class="row">
+					<form class="col s12 m12 l12">
+							<div class="col s12 m12 l12">
+                                <div class="input-field col s3"> 
+                                    <input id="partner_name" type="text" class="validate" value="Partner1">
+                                    <label for="partner_name">Partner Name</label>
+                                </div>
+								<div class="input-field col s3">
+                                    <input id="partner_id" type="text" class="validate" value="GFP_1">
+                                    <label for="partner_id">Partner Id</label>
+                                </div>
+								<div class="input-field col s3">
+                                    <input id="proxy_service_port" type="text" class="validate" value="8089">
+                                    <label for="proxy_service_port">Proxy Service Port</label>
+                                </div>
+								<div class="input-field col s3">
+                                    <input id="tp_port" type="text" class="validate" value="80">
+                                    <label for="tp_port">TP Port</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m12 l12">
+                                <div class="input-field col s6"> 
+                                    <input id="tp_url" type="text" class="validate" value="http://tpurl.com">
+                                    <label for="tp_url">TP URL</label>
+                                </div>
+								<div class="input-field col s6"> 
+                                    <input id="partner_description" type="text" class="validate" value="Description goes here....">
+                                    <label for="partner_description">Description</label>
+                                </div>
+                            </div>
+							<div class="col s12 m12 l12">
+								<div class="input-field">
+									<div id="certificate_name" class="chips chips-initial"></div>
+									<label for="certificate_name">Certificates</label>
+								</div>
+								<div class="file-field input-field col s8">
+									<div class="btn" style="height: 2em; line-height: 2em;">
+										<span>.jar File</span>
+										<input type="file" multiple>
+									</div>
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text" placeholder="Upload Partner .jar file">
+									</div>
+								</div>
+							</div>
+					</form>
+				</div>
+			</div>
+		  
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-effect btn-flat ">Close</a>
+			<a href="#!" class="modal-action waves-effect waves-green btn-flat ">Update</a>
+		  
+		</div>
+	  </div>
+
+	  <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+	<script>
+		$('.chips').material_chip();
+		  $('.chips-initial').material_chip({
+			data: [{
+			  tag: 'Certificate_name_1',
+			}, {
+			  tag: 'Certificate_name_2',
+			}, {
+			  tag: 'Certificate_name_3',
+			}],
+		  });
+	</script>
+  </body>
+</html>
