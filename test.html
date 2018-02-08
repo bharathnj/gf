@@ -19,17 +19,8 @@
         </thead>
 
         <tbody id="tbody">
-			<tr>
-				<td>1</td>
-				<td>GFP_1</td>
-				<td>Partner1.jar</td>
-				<td>Partner1 description goes here...</td>
-				<td><img src="images/status_success.png" /> Running</td>
-				<td><a class="waves-effect waves-light btn start-button" disabled>Start</a></td>
-				<td><a class="waves-effect waves-light btn stop-button">Stop</a></td>
-				<td><a class="waves-effect waves-light btn edit-button modal-trigger" href="#edit_modal">Edit</a></td>
-			</tr>
-			
+
+
 		</tbody>
 </table>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -38,12 +29,10 @@
 $(document).ready(function(){
 	$.ajax({ 
 			type: 'GET', 
-            url: 'https://api.myjson.com/bins/1gx58x', 
+            url: 'https://api.myjson.com/bins/fb00p',
 			heders: {"Accept": "application/json; odata=verbose"},
             dataType:'json',
             success: function(data){
-			$.each(data.partners, function(){
-	
 				for( var i = 0; i < data.partners.length; i++){
 						console.log(data.partners);
 						var o = data.partners[i];
@@ -71,14 +60,11 @@ $(document).ready(function(){
 						
 						for(var j=0; j<o.certificates.length; j++){
 							var c=o.certificates[i];
-							var cer = [];
 							
 							var cid = c.certificate_id;
 							var cname = c.certificate_name;
 							var cloc = c.certificate_location;
 							var uts = c.uploaded_timestamp
-				
-							cer.push(cid,cname,cloc,uts);
 						}
 
 						var date = o.creation_timestamp;
@@ -94,11 +80,8 @@ $(document).ready(function(){
 												+"	<td><a class='waves-effect waves-light btn edit-button modal-trigger' href='#edit_modal'>Edit</a></td> "
 											+"	</tr>");
 				
-				
-				//	$("#demo").append(pname + id + jar_file_loc + des + proxy_service_port + tpurl + ssr + sss + date + lmts);
-					}
-				}
-				)},
+						}
+				},
 			error: function(error){
 			console.log(JSON.stringfy(error));
 		}
